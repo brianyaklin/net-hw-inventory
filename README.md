@@ -1,6 +1,10 @@
 # Hardware Inventory with SNMP
 
+## Overview
+
 The script hw_inventory.py can be used to obtain the contents of the SNMP table entPhysicalTable of a list of network devices, for the purpose of building a CSV report of the contents of this table. The data contained in entPhysicalTable can be used by network administrators to audit their hardware inventory, find components that may be related to a vendors field notice, used for assessing lifecycle requirements, performing vendor maintenance true-ups, and many other reporting needs.
+
+## CLI Arguments
 
 The script requires a single command line argument; a text file containing the IP addresses or FQDN's of the network devices to query. An optional argument of the maximum number of inventory components to query for a single device can also be provided. This defaults to 400 components, but for very large modular network switches it may be necessary to set this number higher if not all components are being seen in the output report.
 
@@ -18,6 +22,8 @@ optional arguments:
 ```
 
 The administrator will be prompted by the script for specifics associated with SNMP versions and authentication.
+
+## Example
 
 An example of running the script against an inventory file of two is as follows:
 
