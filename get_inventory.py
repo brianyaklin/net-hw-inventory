@@ -255,13 +255,14 @@ def create_mib_browser() -> view.MibViewController:
     return mib_view
 
 
-def get_ent_physical_table(auth: Union[UsmUserData, CommunityData], ip: str, mib_view: view.MibViewController, max_reps: int) -> Dict:
+def get_ent_physical_table(auth: Union[UsmUserData, CommunityData], ip: str, mib_view: view.MibViewController, max_reps: int = 400) -> Dict:
     """Get the entPhysicalTable of a device.
 
     Args:
         auth: An auth object of type UsmUserData or CommunityData.
         ip: The IP address of the host to query.
         mib_view: A PySNMP MibViewController for parsing response PySNMP ObjectName objects.
+        max_reps: The maximum number of MIB variables to query.
 
     Returns:
         A dictionary keyed off of the entPhysicalIndex followed by the various
